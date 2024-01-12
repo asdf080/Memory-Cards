@@ -3,8 +3,12 @@ const cards = document.querySelectorAll('.card');
 let matchedCard = 0;
 let cardOne, cardTwo;
 let disableDeck = false;
+let flipedCount = 0;
+let timeCound = 20;
 
 function flipCard(e){
+  flipedCount += 1;
+  document.querySelector('#fCount').innerText = flipedCount;
   let clickedCard = e.target;
   if(clickedCard !== cardOne && !disableDeck){
     clickedCard.classList.add("flip")
@@ -22,9 +26,9 @@ function matchCards(img1, img2){
   if(img1 === img2){
     matchedCard++;
     if(matchedCard == 8){
-      setTimeout(() => {
-        return shuffleCard();
-      },1000)
+      // setTimeout(() => {
+      //   return shuffleCard();
+      // },1000)
     }
     cardOne.removeEventListener("click", flipCard)
     cardTwo.removeEventListener("click", flipCard)
@@ -53,7 +57,6 @@ function shuffleCard(){
   cards.forEach((c,i) => {
     c.classList.remove("flip");
     let imgTag = c.querySelector("img");
-    console.log(imgTag.src)
     imgTag.src = `img/img-${arr[i]}.png`;
     c.addEventListener("click", flipCard);
   })
@@ -64,3 +67,34 @@ shuffleCard()
 cards.forEach(c => {
   c.addEventListener("click", flipCard)
 })
+
+document.querySelector("#Refresh").addEventListener("click", () => {
+  shuffleCard();
+  flipedCount = 0;
+  document.querySelector('#fCount').innerText = flipedCount;
+})
+
+console.log(`
+      ROCKET SCIENCE
+
+            ##
+           #  #
+          #    #
+         #      #
+        #   ##   #
+       #  #    #  #
+       #  #    #   #
+     ##     ##     ##
+    # #            # #
+   #  #            #  #
+  #   #            #   #
+ #    #            #    #
+ #  # #            # #  #
+ # #   #          #   # #
+ #      # # # # ##      #
+
+          #    #
+           #  #
+            ##
+
+`)

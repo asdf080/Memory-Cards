@@ -97,3 +97,51 @@ body{
 .wrapper .card .back-view img{
   max-width: 45px;
 }
+
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 400px;
+  height: 55px;
+  background: #fff;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  font-size: 1.1rem;
+}
+
+nav div{
+  user-select: none;
+  pointer-events: none;
+  padding: 0 20px;
+  position: relative;
+}
+
+nav div::after{
+  position: absolute;
+  top: 5.5px;
+  right: 0;
+  content: "";
+  width: 1px;
+  height: 15px;
+  background-color: gray;
+}
+
+nav button{
+  cursor: pointer;
+  background: none;
+  padding: 4px 8px;
+  margin: 0 20px;
+  border-radius: 5px;
+  border: 2px solid #6563ff;
+  color:#6563ff;
+  transition: background-color 0.2s linear;
+  font-size: 1rem;
+}
+
+nav button:hover{
+  background: #6563ff;
+  color: white;
+}
