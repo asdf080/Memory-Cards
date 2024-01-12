@@ -103,13 +103,13 @@ nav{
   justify-content: space-around;
   align-items: center;
   width: 400px;
-  height: 55px;
+  height: 58px;
   background: #fff;
   padding: 10px;
   margin-top: 15px;
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 nav div{
@@ -121,7 +121,7 @@ nav div{
 
 nav div::after{
   position: absolute;
-  top: 5.5px;
+  top: 6px;
   right: 0;
   content: "";
   width: 1px;
@@ -132,13 +132,14 @@ nav div::after{
 nav button{
   cursor: pointer;
   background: none;
-  padding: 4px 8px;
+  padding: 1px 8px;
   margin: 0 20px;
+  width: 65px;
   border-radius: 5px;
   border: 2px solid #6563ff;
   color:#6563ff;
+  font-size: 1em;
   transition: background-color 0.2s linear;
-  font-size: 1rem;
 }
 
 nav button:hover{

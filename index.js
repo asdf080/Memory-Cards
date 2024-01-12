@@ -74,6 +74,20 @@ document.querySelector("#Refresh").addEventListener("click", () => {
   document.querySelector('#fCount').innerText = flipedCount;
 })
 
+document.querySelector("#Refresh").addEventListener(
+  "mouseenter", () => {
+    document.querySelector("#Refresh i").classList.add("fa-spin");
+
+  }
+)
+
+document.querySelector("#Refresh").addEventListener(
+  "mouseleave", () => {
+    document.querySelector("#Refresh i").classList.remove("fa-spin");
+
+  }
+)
+
 console.log(`
       ROCKET SCIENCE
 
