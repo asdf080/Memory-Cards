@@ -12,10 +12,20 @@ button{
 body{
   --mainColor: #6563ff;
   display: flex;
+  position: relative;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   background: var(--mainColor);
+}
+
+body header h2 {
+  font-size: 2.9em;
+  background: #fff;
+  color: var(--mainColor);
+  padding: 5px 40px 5px 40px;
+  border-radius: 10px;
 }
 
 section{
@@ -203,9 +213,12 @@ nav{
 
 nav div{
   user-select: none;
-  pointer-events: none;
-  padding: 0 20px;
+  padding: 0 19px;
   position: relative;
+}
+
+nav div:first-child{
+  width: 130px;
 }
 
 nav div::after{

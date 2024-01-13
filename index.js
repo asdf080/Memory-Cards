@@ -4,9 +4,26 @@ let matchedCard = 0;
 let cardOne, cardTwo;
 let disableDeck = false;
 let flipedCount = 0;
-let timeCound = 20;
+let timeCount = 40;
+let timeInterval = null;
 
 function flipCard(e){
+  if(timeInterval == null){
+    timeInterval = setInterval(() => {
+      timeCount -= 1;
+      document.querySelector("#TimeSnd").innerText = timeCount; 
+      
+      if(timeCount <= 0){
+        clearInterval(timeInterval);
+        timeInterval = null
+        for(let c of cards){
+          c.style.pointerEvents = 'none'
+        }
+        return;
+      }
+    },1000)
+  }
+
   flipedCount += 1;
   document.querySelector('#fCount').innerText = flipedCount;
   let clickedCard = e.target;
@@ -26,9 +43,8 @@ function matchCards(img1, img2){
   if(img1 === img2){
     matchedCard++;
     if(matchedCard == 8){
-      // setTimeout(() => {
-      //   return shuffleCard();
-      // },1000)
+      clearInterval(timeInterval);
+      timeInterval = null;
     }
     cardOne.removeEventListener("click", flipCard)
     cardTwo.removeEventListener("click", flipCard)
@@ -74,6 +90,13 @@ F5btn.addEventListener("click", () => {
   shuffleCard();
   flipedCount = 0;
   document.querySelector('#fCount').innerText = flipedCount;
+  clearInterval(timeInterval);
+  timeInterval = null;
+  timeCount = 40;
+  document.querySelector("#TimeSnd").innerText = timeCount; 
+  for(let c of cards){
+    c.style.pointerEvents = 'auto'
+  }
 })
 F5btn.addEventListener(
   "mouseenter", () => {
