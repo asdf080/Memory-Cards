@@ -68,25 +68,37 @@ cards.forEach(c => {
   c.addEventListener("click", flipCard)
 })
 
-document.querySelector("#Refresh").addEventListener("click", () => {
+const F5btn = document.querySelector("#Refresh")
+
+F5btn.addEventListener("click", () => {
   shuffleCard();
   flipedCount = 0;
   document.querySelector('#fCount').innerText = flipedCount;
 })
-
-document.querySelector("#Refresh").addEventListener(
+F5btn.addEventListener(
   "mouseenter", () => {
     document.querySelector("#Refresh i").classList.add("fa-spin");
 
   }
 )
-
-document.querySelector("#Refresh").addEventListener(
+F5btn.addEventListener(
   "mouseleave", () => {
     document.querySelector("#Refresh i").classList.remove("fa-spin");
 
   }
 )
+
+const arrowBtn = document.querySelector("#paletteArrow button")
+
+arrowBtn.addEventListener("click", () => {
+  if(!arrowBtn.classList.contains("right")){
+    document.querySelector("#paletteWrap").style.transform = `translateX(79%)`;
+    arrowBtn.classList.add("right");
+    } else {
+      arrowBtn.classList.remove("right");
+      document.querySelector("#paletteWrap").style.transform = `translateX(0)`;
+    }
+})
 
 console.log(`
       ROCKET SCIENCE
