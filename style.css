@@ -28,18 +28,47 @@ section{
 #paletteWrap{
   position: absolute;
   display: flex;
-  width: 140px;
-  height: 400px;
-  left: 93%;
+  width: 160px;
+  height: 250px;
+  left: 68%;
 }
 
 #palette{
   display: flex;
   flex-wrap: wrap;
-  width: 120px;
+  align-content: flex-start;
+  width: 140px;
   height: 100%;
   background: #f8f8f8;
   border-radius: 0 10px 10px 0;
+  padding: 30px 5px 10px 10px;
+}
+
+#palette .paletteColor{
+  width: 45px;
+  height: 45px;
+  border:none;
+  border-radius: 40%;
+  margin: 5px 5px 15px 5px;
+}
+
+#palette .paletteColor:nth-child(1){
+  background-color: #63afff;
+}
+#palette .paletteColor:nth-child(2){
+  background-color: #2ecc71;
+}
+#palette .paletteColor:nth-child(3){
+  background-color: #e99b48;
+}
+#palette .paletteColor:nth-child(4){
+  background-color: #e74c3c;
+}
+#palette .paletteColor:nth-child(5){
+  background-color: #34495e;
+}
+#palette .paletteColor:nth-child(6){
+  background-color: #9ba0a3;
 }
 
 #paletteArrow{
