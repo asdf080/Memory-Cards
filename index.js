@@ -100,6 +100,69 @@ arrowBtn.addEventListener("click", () => {
     }
 })
 
+const body = document.querySelector('body');
+let mainColor = getComputedStyle(body).getPropertyValue('--mainColor').trim();
+
+document.querySelector(".paletteColor:nth-child(1)").addEventListener("click", () => {
+  if(!(mainColor === '#63afff')){
+    body.style.setProperty('--mainColor', '#63afff');
+    mainColor = '#63afff'
+  } else {
+    body.style.setProperty('--mainColor', '#6563ff');
+    mainColor = '#6563ff'
+  }
+})
+
+document.querySelector(".paletteColor:nth-child(2)").addEventListener("click", () => {
+  if(!(mainColor === '#A2D8C0')){
+    body.style.setProperty('--mainColor', '#A2D8C0');
+    mainColor = '#A2D8C0'
+  } else {
+    body.style.setProperty('--mainColor', '#6563ff');
+    mainColor = '#6563ff'
+  }
+})
+
+document.querySelector(".paletteColor:nth-child(3)").addEventListener("click", () => {
+  if(!(mainColor === '#F2CC7B')){
+    body.style.setProperty('--mainColor', '#F2CC7B');
+    mainColor = '#F2CC7B'
+  } else {
+    body.style.setProperty('--mainColor', '#6563ff');
+    mainColor = '#6563ff'
+  }
+})
+
+document.querySelector(".paletteColor:nth-child(4)").addEventListener("click", () => {
+  if(!(mainColor === '#FC7E7E')){
+    body.style.setProperty('--mainColor', '#FC7E7E');
+    mainColor = '#FC7E7E'
+  } else {
+    body.style.setProperty('--mainColor', '#6563ff');
+    mainColor = '#6563ff'
+  }
+})
+
+document.querySelector(".paletteColor:nth-child(5)").addEventListener("click", () => {
+  if(!(mainColor === '#34495e')){
+    body.style.setProperty('--mainColor', '#34495e');
+    mainColor = '#34495e'
+  } else {
+    body.style.setProperty('--mainColor', '#6563ff');
+    mainColor = '#6563ff'
+  }
+})
+
+document.querySelector(".paletteColor:nth-child(6)").addEventListener("click", () => {
+  if(!(mainColor === '#9ba0a3')){
+    body.style.setProperty('--mainColor', '#9ba0a3');
+    mainColor = '#9ba0a3'
+  } else {
+    body.style.setProperty('--mainColor', '#6563ff');
+    mainColor = '#6563ff'
+  }
+})
+
 console.log(`
       ROCKET SCIENCE
 
